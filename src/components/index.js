@@ -1,7 +1,9 @@
 import "./style.css";
 import favicon from "../assets/favicon.png";
 
-import ask from "./print";
+import session from "./session";
+import { humanPlayerFactory, cpuPlayerFactory } from "./player";
+import gameLoop from "./game";
 
 const head = document.querySelector("head");
 const link = document.createElement("link");
@@ -11,9 +13,11 @@ link.setAttribute("type", "image/x-icon");
 link.setAttribute("href", favicon);
 head.appendChild(link);
 
-function greet() {
-  console.log("Jay Jagannath");
-}
+const user = humanPlayerFactory();
+const cpu = cpuPlayerFactory();
 
-greet();
-ask();
+// start game immediately
+const playSession = session(user, cpu);
+gameLoop(playSession);
+
+export default playSession;

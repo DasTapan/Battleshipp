@@ -1,3 +1,61 @@
+/**
+ * Remove the margin in all browsers.
+ */
+
 body {
-  background-color: brown;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+   * Add border box sizing in all browsers (opinionated).
+   */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+/**
+   * 1. Use the default cursor in all browsers (opinionated).
+   */
+
+html {
+  cursor: default;
+}
+
+body {
+  background-color: black;
+}
+
+.content {
+  --board-side-length: 430px;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: blue;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.player-board,
+.cpu-board {
+  height: var(--board-side-length);
+  width: var(--board-side-length);
+
+  border: 2px solid red;
+  border-radius: 5px;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.player-board > div,
+.cpu-board > div {
+  height: calc(10%);
+  width: calc(10%);
+  border: 1px solid whitesmoke;
 }
