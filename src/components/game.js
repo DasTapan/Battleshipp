@@ -5,6 +5,3 @@ function gameLoop(playSession) {
 }
 
 export default gameLoop;
-
-console.log("har har");
-console.log("khi khi");

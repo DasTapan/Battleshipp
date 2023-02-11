@@ -13,4 +13,3 @@ const cpuPlayerFactory = () => {
 };
 
 export { humanPlayerFactory, cpuPlayerFactory };
-console.log("hahah");

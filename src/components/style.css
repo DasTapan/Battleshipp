@@ -59,3 +59,16 @@ body {
   width: calc(10%);
   border: 1px solid whitesmoke;
 }
+
+.attacked-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.attack-mark {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: red;
+}
