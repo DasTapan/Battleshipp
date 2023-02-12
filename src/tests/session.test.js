@@ -1,7 +1,7 @@
 import session from "../components/session";
 import { cpuPlayerFactory, humanPlayerFactory } from "../components/player";
 
-test("players change turn", () => {
+test.only("players change turn", () => {
   const hPlayer = humanPlayerFactory();
   const cPlayer = cpuPlayerFactory();
 

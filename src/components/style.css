@@ -34,7 +34,7 @@ body {
 
   height: 100vh;
   width: 100vw;
-  background-color: blue;
+  background-color: white;
 
   display: flex;
   justify-content: space-evenly;
@@ -46,7 +46,6 @@ body {
   height: var(--board-side-length);
   width: var(--board-side-length);
 
-  border: 2px solid red;
   border-radius: 5px;
 
   display: flex;
@@ -57,7 +56,23 @@ body {
 .cpu-board > div {
   height: calc(10%);
   width: calc(10%);
-  border: 1px solid whitesmoke;
+  border: 1.6px solid whitesmoke;
+}
+
+.cpu-board > div:hover {
+  cursor: pointer;
+}
+
+.cpu-board > div:hover {
+  background-color: #ff8989;
+}
+
+.player-board > div {
+  background-color: #8babe8cc;
+}
+
+.cpu-board > div {
+  background-color: #ffc3c3;
 }
 
 .attacked-cell {
@@ -74,9 +89,10 @@ body {
 }
 
 .occupied {
-  background-color: black;
+  background-color: #a4a2a2ed !important;
+  border-radius: 5px;
 }
 
 .cpu-took-hit {
-  background-color: springgreen;
+  background-color: #9896d1 !important;
 }
