@@ -5,6 +5,9 @@ const gameBoardFactory = () => ({
   allShipSunk() {
     return this.fleet.every((ship) => ship.isSunk() === true);
   },
+  getClassName(point) {
+    return `${point.col}-${point.row}`;
+  },
   getOccupiedGrids(ship) {
     const allPoints = [];
     const colOne = ship.startPos.col;

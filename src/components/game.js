@@ -1,7 +1,3 @@
-function gameLoop(playSession) {
-  while (!playSession.isGameOver()) {
-    playSession.cpuAttack();
-  }
-}
+function playGame(playSession) {}
 
-export default gameLoop;
+export default playGame;

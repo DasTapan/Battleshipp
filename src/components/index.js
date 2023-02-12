@@ -3,7 +3,6 @@ import favicon from "../assets/favicon.png";
 
 import session from "./session";
 import { humanPlayerFactory, cpuPlayerFactory } from "./player";
-import gameLoop from "./game";
 
 const head = document.querySelector("head");
 const link = document.createElement("link");
@@ -18,6 +17,5 @@ const cpu = cpuPlayerFactory();
 
 // start game immediately
 const playSession = session(user, cpu);
-gameLoop(playSession);
 
 export default playSession;
