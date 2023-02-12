@@ -91,7 +91,7 @@ const session = (user, cpu) => {
   const humanAttack = function humanAttack(point) {
     if (humanPlayer.validTurn === true) {
       cpuPlayer.ownBoard.recieveAttack(point);
-      const cell = selectCell(point, "player-board");
+      const cell = selectCell(point, "cpu-board");
       render(cell);
       switchTurn(humanPlayer);
       switchTurn(cpuPlayer);
@@ -126,7 +126,7 @@ const session = (user, cpu) => {
     if (cpuPlayer.validTurn === true) {
       const coordinate = getRandomPoints();
       humanPlayer.ownBoard.recieveAttack(coordinate);
-      const cell = selectCell(coordinate, "cpu-board");
+      const cell = selectCell(coordinate, "player-board");
       render(cell);
       switchTurn(cpuPlayer);
       switchTurn(humanPlayer);
