@@ -8,6 +8,11 @@ const gameBoardFactory = () => ({
   getClassName(point) {
     return `${point.col}-${point.row}`;
   },
+  showShips(boardClass) {
+    this.fleet.forEach((ship) => {
+      ship.showShip(boardClass);
+    });
+  },
   getOccupiedGrids(ship) {
     const allPoints = [];
     const colOne = ship.startPos.col;

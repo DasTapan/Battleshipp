@@ -74,6 +74,8 @@ const session = (user, cpu) => {
     cShip4
   );
 
+  humanPlayer.ownBoard.showShips("player-board");
+
   const isGameOver = function isGameOver() {
     return (
       humanPlayer.ownBoard.allShipSunk() || cpuPlayer.ownBoard.allShipSunk()
@@ -128,7 +130,7 @@ const session = (user, cpu) => {
       render(cell);
       switchTurn(cpuPlayer);
       switchTurn(humanPlayer);
-      if (isGameOver()) console.log("play on; user turn");
+      if (isGameOver()) console.log("game over");
     }
   };
 
