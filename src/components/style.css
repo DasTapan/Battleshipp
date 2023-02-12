@@ -76,3 +76,7 @@ body {
 .occupied {
   background-color: black;
 }
+
+.cpu-took-hit {
+  background-color: springgreen;
+}

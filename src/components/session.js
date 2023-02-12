@@ -93,6 +93,13 @@ const session = (user, cpu) => {
       cpuPlayer.ownBoard.recieveAttack(point);
       const cell = selectCell(point, "cpu-board");
       render(cell);
+      if (
+        !JSON.stringify(cpuPlayer.ownBoard.missHits).includes(
+          JSON.stringify(point)
+        )
+      )
+        cell.classList.add("cpu-took-hit");
+      console.log(cpuPlayer.ownBoard);
       switchTurn(humanPlayer);
       switchTurn(cpuPlayer);
     }
