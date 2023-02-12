@@ -9,7 +9,6 @@ module.exports = {
       "./src/components/session",
       "./src/components/player",
       "./src/components/gameBoard",
-      "./src/components/game",
       "./src/components/dom",
     ],
   },

@@ -10,68 +10,69 @@ const session = (user, cpu) => {
   const humanPlayer = user;
   const cpuPlayer = cpu;
 
-  const hShip1 = shipFactory(5, 0, "Aircraft Carrier");
-  const hShip2 = shipFactory(4, 0, "Cruiser");
-  const hShip3 = shipFactory(3, 0, "Submarine");
-  const hShip4 = shipFactory(3, 0, "Destroyer");
-  const hShip5 = shipFactory(2, 0, "Patrol");
+  const userACarrier = shipFactory(5, 0, "Aircraft Carrier");
+  const userCruiser = shipFactory(4, 0, "Cruiser");
+  const userSubmarine = shipFactory(3, 0, "Submarine");
+  const userDestroyer = shipFactory(3, 0, "Destroyer");
+  const userPatrol = shipFactory(2, 0, "Patrol");
 
-  const cShip1 = shipFactory(5, 0, "Aircraft Carrier");
-  const cShip2 = shipFactory(4, 0, "Cruiser");
-  const cShip3 = shipFactory(3, 0, "Submarine");
-  const cShip4 = shipFactory(3, 0, "Destroyer");
-  const cShip5 = shipFactory(2, 0, "Patrol");
+  const cpuACarrier = shipFactory(5, 0, "Aircraft Carrier");
+  const cpuCruiser = shipFactory(4, 0, "Cruiser");
+  const cpuSubmarine = shipFactory(3, 0, "Submarine");
+  const cpuDestroyer = shipFactory(3, 0, "Destroyer");
+  const cpuPatrol = shipFactory(2, 0, "Patrol");
 
+  // user ship placement
   humanPlayer.ownBoard.placeShip(
     { col: "B", row: 3 },
     { col: "B", row: 6 },
-    hShip2
+    userCruiser
   );
   humanPlayer.ownBoard.placeShip(
     { col: "E", row: 5 },
     { col: "E", row: 7 },
-    hShip3
+    userSubmarine
   );
   humanPlayer.ownBoard.placeShip(
     { col: "A", row: 9 },
     { col: "E", row: 9 },
-    hShip1
+    userACarrier
   );
   humanPlayer.ownBoard.placeShip(
     { col: "H", row: 10 },
     { col: "I", row: 10 },
-    hShip5
+    userPatrol
   );
   humanPlayer.ownBoard.placeShip(
     { col: "G", row: 2 },
     { col: "I", row: 2 },
-    hShip4
+    userDestroyer
   );
-
+  // cpu ship placement
   cpuPlayer.ownBoard.placeShip(
-    { col: "B", row: 3 },
-    { col: "B", row: 6 },
-    cShip2
-  );
-  cpuPlayer.ownBoard.placeShip(
-    { col: "E", row: 5 },
-    { col: "E", row: 7 },
-    cShip3
-  );
-  cpuPlayer.ownBoard.placeShip(
-    { col: "A", row: 9 },
-    { col: "E", row: 9 },
-    cShip1
-  );
-  cpuPlayer.ownBoard.placeShip(
+    { col: "H", row: 7 },
     { col: "H", row: 10 },
-    { col: "I", row: 10 },
-    cShip5
+    cpuCruiser
   );
   cpuPlayer.ownBoard.placeShip(
-    { col: "G", row: 2 },
-    { col: "I", row: 2 },
-    cShip4
+    { col: "A", row: 1 },
+    { col: "C", row: 1 },
+    cpuSubmarine
+  );
+  cpuPlayer.ownBoard.placeShip(
+    { col: "A", row: 6 },
+    { col: "A", row: 10 },
+    cpuACarrier
+  );
+  cpuPlayer.ownBoard.placeShip(
+    { col: "E", row: 4 },
+    { col: "F", row: 4 },
+    cpuPatrol
+  );
+  cpuPlayer.ownBoard.placeShip(
+    { col: "D", row: 8 },
+    { col: "F", row: 8 },
+    cpuDestroyer
   );
 
   humanPlayer.ownBoard.showShips("player-board");
@@ -99,12 +100,11 @@ const session = (user, cpu) => {
         )
       )
         cell.classList.add("cpu-took-hit");
-      console.log(cpuPlayer.ownBoard);
       switchTurn(humanPlayer);
       switchTurn(cpuPlayer);
     }
     if (!isGameOver()) cpuAttack();
-    else console.log("game over");
+    else console.log("game over, player won");
   };
 
   const cpuAttack = function cpuAttack() {
@@ -137,7 +137,7 @@ const session = (user, cpu) => {
       render(cell);
       switchTurn(cpuPlayer);
       switchTurn(humanPlayer);
-      if (isGameOver()) console.log("game over");
+      if (isGameOver()) console.log("game over, CPU won");
     }
   };
 
