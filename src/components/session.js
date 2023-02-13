@@ -109,11 +109,11 @@ const session = (user, cpu) => {
 
   const cpuAttack = function cpuAttack() {
     function generateRandomPoints() {
-      const randomRow = Math.floor(Math.random() * 10) + 1;
-      const randomCol = String.fromCharCode(
+      const row = Math.floor(Math.random() * 10) + 1;
+      const col = String.fromCharCode(
         Math.floor(Math.random() * (74 - 65 + 1)) + 65
       );
-      return { randomCol, randomRow };
+      return { col, row };
     }
 
     function checkUnique(point) {
@@ -127,7 +127,7 @@ const session = (user, cpu) => {
       while (checkUnique(randomPoint)) {
         randomPoint = { ...generateRandomPoints() };
       }
-      return { col: randomPoint.randomCol, row: randomPoint.randomRow };
+      return { col: randomPoint.col, row: randomPoint.row };
     }
 
     if (cpuPlayer.validTurn === true) {
