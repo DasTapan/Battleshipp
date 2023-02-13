@@ -1,5 +1,5 @@
 import shipFactory from "./ship";
-import render from "./render";
+import { render, displayWinner } from "./render";
 
 function switchTurn(attacker) {
   // eslint-disable-next-line no-param-reassign
@@ -104,7 +104,7 @@ const session = (user, cpu) => {
       switchTurn(cpuPlayer);
     }
     if (!isGameOver()) cpuAttack();
-    else console.log("game over, player won");
+    else displayWinner("Congratulations!", "You won");
   };
 
   const cpuAttack = function cpuAttack() {
