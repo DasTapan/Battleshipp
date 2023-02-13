@@ -10,6 +10,8 @@ module.exports = {
       "./src/components/player",
       "./src/components/gameBoard",
       "./src/components/dom",
+      "./src/components/randomPlacement",
+      "./src/components/render",
     ],
   },
   devtool: "inline-source-map",

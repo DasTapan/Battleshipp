@@ -1,4 +1,4 @@
-import shipFactory from "./ship";
+import { userPlacement, cpuPlacement } from "./randomPlacement";
 import { render, displayWinner } from "./render";
 
 function switchTurn(attacker) {
@@ -10,69 +10,61 @@ const session = (user, cpu) => {
   const humanPlayer = user;
   const cpuPlayer = cpu;
 
-  const userACarrier = shipFactory(5, 0, "Aircraft Carrier");
-  const userCruiser = shipFactory(4, 0, "Cruiser");
-  const userSubmarine = shipFactory(3, 0, "Submarine");
-  const userDestroyer = shipFactory(3, 0, "Destroyer");
-  const userPatrol = shipFactory(2, 0, "Patrol");
-
-  const cpuACarrier = shipFactory(5, 0, "Aircraft Carrier");
-  const cpuCruiser = shipFactory(4, 0, "Cruiser");
-  const cpuSubmarine = shipFactory(3, 0, "Submarine");
-  const cpuDestroyer = shipFactory(3, 0, "Destroyer");
-  const cpuPatrol = shipFactory(2, 0, "Patrol");
+  const userIndex = Math.floor(Math.random() * 4);
+  const cpuIndex = Math.floor(Math.random() * 4);
 
   // user ship placement
   humanPlayer.ownBoard.placeShip(
-    { col: "B", row: 3 },
-    { col: "B", row: 6 },
-    userCruiser
+    userPlacement[userIndex][0][0],
+    userPlacement[userIndex][0][1],
+    userPlacement[userIndex][0][2]
+  );
+
+  humanPlayer.ownBoard.placeShip(
+    userPlacement[userIndex][1][0],
+    userPlacement[userIndex][1][1],
+    userPlacement[userIndex][1][2]
   );
   humanPlayer.ownBoard.placeShip(
-    { col: "E", row: 5 },
-    { col: "E", row: 7 },
-    userSubmarine
+    userPlacement[userIndex][2][0],
+    userPlacement[userIndex][2][1],
+    userPlacement[userIndex][2][2]
   );
   humanPlayer.ownBoard.placeShip(
-    { col: "A", row: 9 },
-    { col: "E", row: 9 },
-    userACarrier
+    userPlacement[userIndex][3][0],
+    userPlacement[userIndex][3][1],
+    userPlacement[userIndex][3][2]
   );
   humanPlayer.ownBoard.placeShip(
-    { col: "H", row: 10 },
-    { col: "I", row: 10 },
-    userPatrol
-  );
-  humanPlayer.ownBoard.placeShip(
-    { col: "G", row: 2 },
-    { col: "I", row: 2 },
-    userDestroyer
+    userPlacement[userIndex][4][0],
+    userPlacement[userIndex][4][1],
+    userPlacement[userIndex][4][2]
   );
   // cpu ship placement
   cpuPlayer.ownBoard.placeShip(
-    { col: "H", row: 7 },
-    { col: "H", row: 10 },
-    cpuCruiser
+    cpuPlacement[cpuIndex][0][0],
+    cpuPlacement[cpuIndex][0][1],
+    cpuPlacement[cpuIndex][0][2]
   );
   cpuPlayer.ownBoard.placeShip(
-    { col: "A", row: 1 },
-    { col: "C", row: 1 },
-    cpuSubmarine
+    cpuPlacement[cpuIndex][1][0],
+    cpuPlacement[cpuIndex][1][1],
+    cpuPlacement[cpuIndex][1][2]
   );
   cpuPlayer.ownBoard.placeShip(
-    { col: "A", row: 6 },
-    { col: "A", row: 10 },
-    cpuACarrier
+    cpuPlacement[cpuIndex][2][0],
+    cpuPlacement[cpuIndex][2][1],
+    cpuPlacement[cpuIndex][2][2]
   );
   cpuPlayer.ownBoard.placeShip(
-    { col: "E", row: 4 },
-    { col: "F", row: 4 },
-    cpuPatrol
+    cpuPlacement[cpuIndex][3][0],
+    cpuPlacement[cpuIndex][3][1],
+    cpuPlacement[cpuIndex][3][2]
   );
   cpuPlayer.ownBoard.placeShip(
-    { col: "D", row: 8 },
-    { col: "F", row: 8 },
-    cpuDestroyer
+    cpuPlacement[cpuIndex][4][0],
+    cpuPlacement[cpuIndex][4][1],
+    cpuPlacement[cpuIndex][4][2]
   );
 
   humanPlayer.ownBoard.showShips("player-board");
