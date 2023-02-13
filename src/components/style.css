@@ -103,13 +103,13 @@ body {
 .result {
   position: absolute;
   bottom: 110px;
-  border: 2px solid red;
   text-align: center;
   font-size: 1.5rem;
 }
 
-.result > span {
+.result > span:first-child {
   font-style: italic;
+  margin-right: 6px;
 }
 
 .player-banner,

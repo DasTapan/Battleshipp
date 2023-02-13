@@ -1,10 +1,11 @@
 const resultDiv = document.querySelector(".result");
 
 function displayWinner(str1, str2) {
-  const span = document.createElement("span");
-  span.textContent = str1;
-  resultDiv.appendChild(span);
-  resultDiv.textContent = str2;
+  const spanOne = document.createElement("span");
+  const spanTwo = document.createElement("span");
+  spanOne.textContent = str1;
+  spanTwo.textContent = str2;
+  resultDiv.append(spanOne, spanTwo);
 }
 
 function render(cell) {
