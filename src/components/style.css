@@ -37,8 +37,30 @@ body {
   background-color: white;
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  column-gap: 10px;
+}
+.player-banner,
+.cpu-banner {
+  height: 180px;
+  width: 50px;
+  padding: 28px 0;
+  font-size: 40px;
+  font-weight: bold;
+  border: 2px solid red;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+.vs {
+  height: 60px;
+  width: 60px;
+  border: 2px solid red;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 30px;
 }
 
 .player-board,
