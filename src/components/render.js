@@ -12,6 +12,7 @@ function render(cell) {
   const attackMark = document.createElement("div");
   attackMark.classList.add("attack-mark");
   cell.appendChild(attackMark);
+  cell.setAttribute("style", "pointer-events:none");
 }
 
 export { render, displayWinner };
